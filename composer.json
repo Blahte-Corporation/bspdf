@@ -1,0 +1,46 @@
+{
+    "name": "blahtesoftware/bspdf",
+    "description": "PHP HTML to PDF conversion with support for modern HTML and CSS. Built on wkhtmltopdf.",
+    "keywords": ["laravel","bspdf", "pdf", "image", "wkhtmltopdf", "wkhtmltoimage"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Blahte Software",
+            "email": "hello@blahte.software"
+        }
+    ],
+    "require": {
+        "php": ">=8.0",
+        "symfony/process": "~3.4||~4.3||~5.0||~6.0",
+        "psr/log": "^1.0||^2.0||^3.0",
+        "illuminate/support": "^6|^7|^8|^9",
+        "illuminate/filesystem": "^6|^7|^8|^9"
+    },
+    "autoload": {
+        "psr-4": {
+            "BlahteSoftware\\BsPdf\\": "src/"
+        },
+        "files": [
+            "src/Utils/constants.php",
+            "src/Utils/functions.php"
+        ]
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.0-dev"
+        },
+        "laravel": {
+            "providers": [
+                "BlahteSoftware\\BsPdf\\ServiceProviders\\BsPdfServiceProvider"
+            ],
+            "aliases": {
+                "BSPDF": "BlahteSoftware\\BsPdf\\Facades\\BsPdf"
+            }
+        }
+    },
+    "scripts": {
+        "test": "phpunit"
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
